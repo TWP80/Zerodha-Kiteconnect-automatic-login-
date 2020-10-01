@@ -28,12 +28,16 @@ dictionary={
         'What is your birth place?':'xxxxx'      
         }
 
+# write your User Id
+loginid = "AB1234"
+# write your Password
+password = "abc@123"
+# write your PIN
+loginpin = "123456"
 
-username = driver.find_element_by_name("user_id")
-password = driver.find_element_by_name("password")
+username = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID,"userid"))).send_keys(loginid)
+password = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID,"password"))).send_keys(password)
 
-username.send_keys("Your Zerodha user_id here")
-password.send_keys("Your Zerodha password here")
 
 driver.find_element_by_name('login').click()
 
